@@ -26,3 +26,15 @@ const getIP = async (url) => {
 
 // now we use an object to get the data we need
 const datas = {getIP};
+
+// receive the datas and display them
+const Display = async () => {
+  // receive the datas
+  datas.getIP(api_url + api_key + post_ip).then(data => {
+    // display the datas
+    ip.innerHTML = `${data.ipAddress}`;
+    location.innerHTML = `${data.location.region}, ${data.location.country}`;
+    timezone.innerHTML = `${data.location.timeZone}`;
+    isp.innerHTML = `${data.isp}`;
+  })
+}
