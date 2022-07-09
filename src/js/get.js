@@ -29,3 +29,6 @@ const fetchData = async (url) => {
   const data = await response.json();
   return data;
 }
+
+// we keep our data in an object
+const data = {fetchData};
