@@ -23,3 +23,6 @@ const getIP = async (url) => {
   const data = await response.json();
   return data;
 }
+
+// now we use an object to get the data we need
+const datas = {getIP};
