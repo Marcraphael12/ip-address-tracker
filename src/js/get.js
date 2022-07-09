@@ -14,3 +14,12 @@ const isp = document.querySelector('.isp');
 const api_url = 'https://geo.ipify.org/api/v2/country?';
 const api_key = `apiKey=at_Yw8NM0CtrV4FB1v3PYflw1t3aigtm&`;
 const post_ip = `ipAddress=${input.value}`;
+
+// our functions
+// get the IP address
+const getIP = async (url) => {
+  // fetch the IP address to get a json object
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
