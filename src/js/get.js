@@ -9,3 +9,8 @@ const ip = document.querySelector('.ip-adress');
 const location = document.querySelector('.location');
 const timezone = document.querySelector('.timezone');
 const isp = document.querySelector('.isp');
+
+// our API
+const api_url = 'https://geo.ipify.org/api/v2/country?';
+const api_key = `apiKey=at_Yw8NM0CtrV4FB1v3PYflw1t3aigtm&`;
+const post_ip = `ipAddress=${input.value}`;
