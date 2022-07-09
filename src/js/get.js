@@ -32,3 +32,15 @@ const fetchData = async (url) => {
 
 // we keep our data in an object
 const data = {fetchData};
+
+// we receive and display our data
+const displayData = async () => {
+  // we receive our data
+  fetchData(api_url).then(data => {
+    // we display our data
+    ip.innerHTML = `${data.ip}`;
+    location.innerHTML = `${data.location.region}, ${data.location.country}`;
+    timezone.innerHTML = data.location.timezone;
+    isp.innerHTML = data.isp;
+  });
+}
