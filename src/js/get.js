@@ -35,12 +35,15 @@ const data = {fetchData};
 
 // we receive and display our data
 const displayData = async () => {
+  // an event listener on our submit button
+  submit.addEventListener('click', async () => {
   // we receive our data
-  fetchData(api_url).then(data => {
-    // we display our data
-    ip.innerHTML = `${data.ip}`;
-    location.innerHTML = `${data.location.region}, ${data.location.country}`;
-    timezone.innerHTML = data.location.timezone;
-    isp.innerHTML = data.isp;
+    fetchData(api_url).then(data => {
+      // we display our data
+      ip.innerHTML = `${data.ip}`;
+      location.innerHTML = `${data.location.region}, ${data.location.country}`;
+      timezone.innerHTML = data.location.timezone;
+      isp.innerHTML = data.isp;
+    });
   });
 }
