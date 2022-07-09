@@ -47,3 +47,5 @@ const displayData = async () => {
     });
   });
 }
+
+export default displayData;
