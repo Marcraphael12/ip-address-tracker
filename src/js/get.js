@@ -22,3 +22,10 @@ input.addEventListener('onkeyup', getInput);
 
 // our API
 const api_url = `https://geo.ipify.org/api/v2/country?apiKey=at_Yw8NM0CtrV4FB1v3PYflw1t3aigtm&ipAddress=${getInput()}`;
+
+// we fethch our API
+const fetchData = async (url) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
