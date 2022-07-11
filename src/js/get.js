@@ -57,7 +57,8 @@ const display_ip = (ip_address)=> {
   }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
 }
 
-// run map when page loads
+// run map and ip when page loads
+display_ip()
 document.body.onload = getRandomQuote();
 
 // we get the input value
@@ -71,3 +72,9 @@ input.addEventListener('onkeyup', (e)=> {
   getInput();
 });
 const value = getInput();
+
+// submit the ip
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+  display_ip(value);
+})
