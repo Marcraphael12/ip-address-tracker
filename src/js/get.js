@@ -59,3 +59,15 @@ const display_ip = (ip_address)=> {
 
 // run map when page loads
 document.body.onload = getRandomQuote();
+
+// we get the input value
+const getInput = () => {
+  // we need to get the value of our input
+  return input.value.toString();
+}
+
+input.addEventListener('onkeyup', (e)=> {
+  e.preventDefault();
+  getInput();
+});
+const value = getInput();
