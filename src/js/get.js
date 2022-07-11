@@ -52,7 +52,7 @@ const map_ip = () => {
       // we display our data
       ip.innerHTML = `${datas.ip}`;
       location.innerHTML = `${datas.location.region}, ${datas.location.country}`;
-      timezone.innerHTML = datas.location.timezone;
+      timezone.innerHTML = `UTC ${datas.location.timezone}`;
       isp.innerHTML = datas.isp;
 
       //we call our display_map funct

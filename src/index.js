@@ -1,5 +1,9 @@
 import _ from 'lodash';
 import './style.css';
+import bg from './images/pattern-bg.png';
+
+const header = document.querySelector('.header');
+header.style.backgroundImage = `url(./public/icons/pattern-bg.png)`
 
 // let's strat by importing our DOM elements
 
