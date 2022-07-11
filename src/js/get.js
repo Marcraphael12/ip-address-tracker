@@ -40,8 +40,9 @@ const map_ip = () => {
   // get IP address funct
   const display_ip = (ip_address)=> {
     // a condition to check weither or not the IP is entered
+    const api_ip = '';
     if (ip_address === undefined) {
-      constapi_ip = API;
+      const api_ip = API;
     } else {
       const api_ip = API + ip_address;
     }
@@ -49,10 +50,10 @@ const map_ip = () => {
     // now we fetch the datas
     fetch(api_ip).then(response => response.json()).then(datas => {
       // we display our data
-      ip.innerHTML = `${data.ip}`;
-      location.innerHTML = `${data.location.region}, ${data.location.country}`;
-      timezone.innerHTML = data.location.timezone;
-      isp.innerHTML = data.isp;
+      ip.innerHTML = `${datas.ip}`;
+      location.innerHTML = `${datas.location.region}, ${datas.location.country}`;
+      timezone.innerHTML = datas.location.timezone;
+      isp.innerHTML = datas.isp;
 
       //we call our display_map funct
       display_map([datas.location.lat, datas.location.lng])
