@@ -15,3 +15,14 @@ const map_conatiner = document.querySelector('.map');
 const key = 'at_Yw8NM0CtrV4FB1v3PYflw1t3aigtm';
 const API = `https://geo.ipify.org/api/v2/country?apiKey=${key}&ipAddress=`
 
+// our map
+let map = L.map(map_conatiner, {
+  'center': [0,0],
+  'zoom':0,
+  'layers': [
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    })]
+});
+
