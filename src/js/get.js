@@ -29,5 +29,8 @@ let map = L.map(map_conatiner, {
 // display map funct
 const display_map = (lat_long = [110, 20]) => {
   // display the map with setView funct with our default lat and long and an default zoom level
-  map.setView(lat_long, 10)
+  map.setView(lat_long, 10);
+
+  // set a marker
+  L.marker(lat_long).addTo(map);
 }
