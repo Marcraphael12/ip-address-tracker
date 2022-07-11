@@ -34,3 +34,8 @@ const display_map = (lat_long = [110, 20]) => {
   // set a marker
   L.marker(lat_long).addTo(map);
 }
+
+// get IP address funct
+const display_ip = (ip_address)=> {
+  
+}
