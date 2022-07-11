@@ -1,5 +1,7 @@
 // let's strat by importing our DOM elements
 
+import { LibManifestPlugin } from "webpack";
+
 // our form
 const submit = document.querySelector('.submit');
 const input = document.querySelector('.input');
@@ -63,6 +65,13 @@ const map_ip = () => {
 
   // save user input in local storage
   const user_input = [];
+
+  // save the input in local storage
+  const save_input = (input) => {
+    user_input.push(input);
+    localStorage.setItem('ip', JSON.stringify(user_input));
+    display_ip();
+  }
 }
 
 export default map_ip;
