@@ -51,5 +51,8 @@ const display_ip = (ip_address)=> {
     location.innerHTML = `${data.location.region}, ${data.location.country}`;
     timezone.innerHTML = data.location.timezone;
     isp.innerHTML = data.isp;
+
+    //we call our display_map funct
+    display_map([datas.location.lat, datas.location.lng])
   }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
 }
