@@ -43,5 +43,9 @@ const display_ip = (ip_address)=> {
   } else {
     const api_ip = API + ip_address;
   }
-  
+
+  // now we fetch the datas
+  fetch(api_ip).then(response => response.json()).then(datas => {
+    
+  }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
 }
