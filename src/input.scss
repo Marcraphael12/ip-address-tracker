@@ -146,6 +146,10 @@ main  {
   width: 100%;
   height: calc(100vh - 290px);
 
+  @include devices(769) {
+    height: calc(100vh - 240px);
+  }
+
   >.map {
     width: 100%;
     height: 100%;
