@@ -37,5 +37,10 @@ const display_map = (lat_long = [110, 20]) => {
 
 // get IP address funct
 const display_ip = (ip_address)=> {
-  
+  // a condition to check weither or not the IP is entered
+  if (ip_address === undefined) {
+    constapi_ip = API;
+  } else {
+  }
+
 }
