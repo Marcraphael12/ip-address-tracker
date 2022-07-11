@@ -40,11 +40,11 @@ const map_ip = () => {
   // get IP address funct
   const display_ip = (ip_address)=> {
     // a condition to check weither or not the IP is entered
-    const api_ip = '';
+    let api_ip;
     if (ip_address === undefined) {
-      const api_ip = API;
+      api_ip = API;
     } else {
-      const api_ip = API + ip_address;
+      api_ip = API + ip_address;
     }
 
     // now we fetch the datas
@@ -62,7 +62,7 @@ const map_ip = () => {
 
   // run map and ip when page loads
   display_ip()
-  document.body.onload = getRandomQuote();
+  document.body.onload = display_map();
 
   // we get the input value
   const getInput = () => {
