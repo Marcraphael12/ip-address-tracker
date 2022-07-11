@@ -41,6 +41,7 @@ const display_ip = (ip_address)=> {
   if (ip_address === undefined) {
     constapi_ip = API;
   } else {
+    const api_ip = API + ip_address;
   }
-
+  
 }
