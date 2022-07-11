@@ -26,55 +26,60 @@ let map = L.map(map_conatiner, {
     })]
 });
 
-// display map funct
-const display_map = (lat_long = [110, 20]) => {
-  // display the map with setView funct with our default lat and long and an default zoom level
-  map.setView(lat_long, 10);
+const map_ip = () => {
 
-  // set a marker
-  L.marker(lat_long).addTo(map);
-}
+    // display map funct
+    const display_map = (lat_long = [110, 20]) => {
+    // display the map with setView funct with our default lat and long and an default zoom level
+    map.setView(lat_long, 10);
 
-// get IP address funct
-const display_ip = (ip_address)=> {
-  // a condition to check weither or not the IP is entered
-  if (ip_address === undefined) {
-    constapi_ip = API;
-  } else {
-    const api_ip = API + ip_address;
+    // set a marker
+    L.marker(lat_long).addTo(map);
   }
 
-  // now we fetch the datas
-  fetch(api_ip).then(response => response.json()).then(datas => {
-    // we display our data
-    ip.innerHTML = `${data.ip}`;
-    location.innerHTML = `${data.location.region}, ${data.location.country}`;
-    timezone.innerHTML = data.location.timezone;
-    isp.innerHTML = data.isp;
+  // get IP address funct
+  const display_ip = (ip_address)=> {
+    // a condition to check weither or not the IP is entered
+    if (ip_address === undefined) {
+      constapi_ip = API;
+    } else {
+      const api_ip = API + ip_address;
+    }
 
-    //we call our display_map funct
-    display_map([datas.location.lat, datas.location.lng])
-  }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
+    // now we fetch the datas
+    fetch(api_ip).then(response => response.json()).then(datas => {
+      // we display our data
+      ip.innerHTML = `${data.ip}`;
+      location.innerHTML = `${data.location.region}, ${data.location.country}`;
+      timezone.innerHTML = data.location.timezone;
+      isp.innerHTML = data.isp;
+
+      //we call our display_map funct
+      display_map([datas.location.lat, datas.location.lng])
+    }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
+  }
+
+  // run map and ip when page loads
+  display_ip()
+  document.body.onload = getRandomQuote();
+
+  // we get the input value
+  const getInput = () => {
+    // we need to get the value of our input
+    return input.value.toString();
+  }
+
+  input.addEventListener('onkeyup', (e)=> {
+    e.preventDefault();
+    getInput();
+  });
+  const value = getInput();
+
+  // submit the ip
+  submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    display_ip(value);
+  })
 }
 
-// run map and ip when page loads
-display_ip()
-document.body.onload = getRandomQuote();
-
-// we get the input value
-const getInput = () => {
-  // we need to get the value of our input
-  return input.value.toString();
-}
-
-input.addEventListener('onkeyup', (e)=> {
-  e.preventDefault();
-  getInput();
-});
-const value = getInput();
-
-// submit the ip
-submit.addEventListener('click', (e) => {
-  e.preventDefault();
-  display_ip(value);
-})
+export default map_ip;
