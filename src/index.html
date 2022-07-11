@@ -7,6 +7,14 @@
   <title>Frontend Mentor | IP Address Tracker</title>
 
   <link rel="import" href="https://fonts.google.com/specimen/Rubik">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+  integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+  crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+  integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+  crossorigin=""></script>
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -17,8 +25,8 @@
     <div class="form-header">
       <h1>IP Address Tracker</h1>
       <form action="">
-        <input type="search" placeholder="Search for any IP address or domain">
-        <button>
+        <input class='input' type="search" placeholder="Search for any IP address or domain">
+        <button class="submit">
           >
         </button>
       </form>
@@ -27,22 +35,27 @@
     <ul class="tracker">
       <li>
         <h2>ip adress</h2>
-        <span class="ip-adress">10.455.21325.33</span>
+        <span class="ip-adress"></span>
       </li>
       <li>
         <h2>location</h2>
-        <span class="location">region,Country code</span>
+        <span class="location"></span>
       </li>
       <li>
         <h2>time zone</h2>
-        <span>utc +1:00</span>
+        <span class="timezone"></span>
       </li>
       <li>
         <h2>isp</h2>
-        <span class="isp">Orange cam</span>
+        <span class="isp"></span>
       </li>
     </ul>
   </header>
+  <main>
+    <div class="map">
+
+    </div>
+  </main>
 
   
 <!--
