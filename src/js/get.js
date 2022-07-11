@@ -57,4 +57,5 @@ const display_ip = (ip_address)=> {
   }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
 }
 
-display_ip();
+// run map when page loads
+document.body.onload = getRandomQuote();
