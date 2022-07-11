@@ -26,3 +26,7 @@ let map = L.map(map_conatiner, {
     })]
 });
 
+// display map funct
+const display_map = (lat_long = [110, 20]) => {
+
+}
