@@ -29,8 +29,8 @@ let map = L.map(map_conatiner, {
 
 const map_ip = () => {
 
-    // display map funct
-    const display_map = (lat_long = [110, 20]) => {
+  // display map funct
+  const display_map = (lat_long = [110, 20]) => {
     // display the map with setView funct with our default lat and long and an default zoom level
     map.setView(lat_long, 10);
 
@@ -61,27 +61,8 @@ const map_ip = () => {
     }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
   }
 
-  // run map and ip when page loads
-  display_ip()
-  document.body.onload = display_map();
-
-  // we get the input value
-  const getInput = () => {
-    // we need to get the value of our input
-    return input.value.toString();
-  }
-
-  input.addEventListener('onkeyup', (e)=> {
-    e.preventDefault();
-    getInput();
-  });
-  const value = getInput();
-
-  // submit the ip
-  submit.addEventListener('click', (e) => {
-    e.preventDefault();
-    display_ip(value);
-  })
+  // save user input in local storage
+  const user_input = [];
 }
 
 export default map_ip;
