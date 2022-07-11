@@ -46,6 +46,10 @@ const display_ip = (ip_address)=> {
 
   // now we fetch the datas
   fetch(api_ip).then(response => response.json()).then(datas => {
-    
+    // we display our data
+    ip.innerHTML = `${data.ip}`;
+    location.innerHTML = `${data.location.region}, ${data.location.country}`;
+    timezone.innerHTML = data.location.timezone;
+    isp.innerHTML = data.isp;
   }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
 }
