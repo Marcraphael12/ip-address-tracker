@@ -13,7 +13,7 @@ const map_conatiner = document.querySelector('.map');
 
 // our API
 const key = 'at_Yw8NM0CtrV4FB1v3PYflw1t3aigtm';
-const API = `https://geo.ipify.org/api/v2/country?apiKey=${key}&ipAddress=`
+const API = `https://geo.ipify.org/api/v2/country,city?apiKey=${key}&ipAddress=`
 
 // our map
 let map = L.map(map_conatiner, {
