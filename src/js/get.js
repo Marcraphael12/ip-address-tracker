@@ -56,3 +56,5 @@ const display_ip = (ip_address)=> {
     display_map([datas.location.lat, datas.location.lng])
   }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
 }
+
+display_ip();
