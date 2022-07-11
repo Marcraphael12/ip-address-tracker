@@ -137,7 +137,7 @@ main {
 main > .map {
   width: 100%;
   height: 100%;
-  z-index: 0 !important;
+  z-index: 0;
 }
 
 .attribution {
