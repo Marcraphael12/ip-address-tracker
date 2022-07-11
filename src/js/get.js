@@ -3,6 +3,7 @@
 // our form
 const submit = document.querySelector('.submit');
 const input = document.querySelector('.input');
+const form = document.querySelector('form');
 
 // our results
 const ip = document.querySelector('.ip-adress');
