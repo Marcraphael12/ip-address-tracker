@@ -1,7 +1,5 @@
 // let's strat by importing our DOM elements
 
-import { LibManifestPlugin } from "webpack";
-
 // our form
 const submit = document.querySelector('.submit');
 const input = document.querySelector('.input');
@@ -16,7 +14,6 @@ const map_conatiner = document.querySelector('.map');
 
 // our API
 const key = 'at_Yw8NM0CtrV4FB1v3PYflw1t3aigtm';
-const API = `https://geo.ipify.org/api/v2/country,city?apiKey=${key}&ipAddress=`
 
 // our map
 let map = L.map(map_conatiner, {
@@ -31,8 +28,8 @@ let map = L.map(map_conatiner, {
 
 const map_ip = () => {
 
-  // display map funct
-  const display_map = (lat_long = [110, 20]) => {
+    // display map funct
+    const display_map = (lat_long = [110, 20]) => {
     // display the map with setView funct with our default lat and long and an default zoom level
     map.setView(lat_long, 10);
 
@@ -45,9 +42,9 @@ const map_ip = () => {
     // a condition to check weither or not the IP is entered
     let api_ip;
     if (ip_address === undefined) {
-      api_ip = API;
+      api_ip = `https://geo.ipify.org/api/v2/country,city?apiKey=${key}&ipAddress=`;
     } else {
-      api_ip = API + ip_address;
+      api_ip = `${ip_address}`;
     }
 
     // now we fetch the datas
@@ -63,15 +60,15 @@ const map_ip = () => {
     }).catch(error => alert('Sorry for the inconvenient, retype your IP Address please!'))
   }
 
-  // save user input in local storage
-  const user_input = [];
+  // load content when page loads
+  window.addEventListener('load', ()=> {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      display_ip(`https://geo.ipify.org/api/v2/country,city?apiKey=${key}&ipAddress=${input.value}`)
+    });
 
-  // save the input in local storage
-  const save_input = (input) => {
-    user_input.push(input);
-    localStorage.setItem('ip', JSON.stringify(user_input));
     display_ip();
-  }
+  })
 }
 
 export default map_ip;

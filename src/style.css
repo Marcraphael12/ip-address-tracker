@@ -36,13 +36,13 @@
   color: #fff;
   margin-bottom: 20px;
 }
-.header .form-header > div {
+.header .form-header > form {
   width: 100%;
   height: auto;
   display: flex;
   margin-bottom: 30px;
 }
-.header .form-header > div > input {
+.header .form-header > form > input {
   width: 100%;
   height: 50px;
   border: none;
@@ -51,14 +51,14 @@
   border-bottom-left-radius: 10px;
   outline: none;
 }
-.header .form-header > div > input:hover {
+.header .form-header > form > input:hover {
   cursor: pointer;
 }
-.header .form-header > div > input::placeholder {
+.header .form-header > form > input::placeholder {
   font-size: 12px;
   color: rgb(201, 201, 201);
 }
-.header .form-header > div > button {
+.header .form-header > form > button {
   width: 60px;
   height: 50px;
   border: none;
@@ -69,7 +69,7 @@
   color: #fff;
   background: #000;
 }
-.header .form-header > div > button:hover {
+.header .form-header > form > button:hover {
   background: rgba(20, 20, 20, 0.814);
   cursor: pointer;
 }
